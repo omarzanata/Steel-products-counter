@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flat and Long steel Coils Counting</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Steel Coils Counter</h1>
+        <form method="post" action="/" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".jpg, .jpeg, .png" required>
+            <button type="submit" class="btn btn-warning"> Count</button>
+        </form>
+        {% if count_message %}
+            <p>{{ count_message }}</p>
+        {% endif %}
+        {% if filename %}
+            <img src="{{ url_for('static', filename='Uploads/' + filename)}}" alt="Detected Coils">
+        {% endif %}
+    </div>
+</body>
+</html>
+
+
+
+
+
+
